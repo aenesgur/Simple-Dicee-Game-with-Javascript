@@ -9,22 +9,19 @@ function games()
             let value = element.srcElement.innerHTML;
             document.querySelector(".dice .img"+value).setAttribute("src",image);
             
-            if(localStorage.getItem('numbers')==null)
-            {   
+            if(localStorage.getItem('numbers')==null){   
                 var numbers = [];
                 numbers.push(randomNumber);
                 localStorage.setItem('numbers',JSON.stringify(numbers));
             }
-            else
-            {
+            else{
                 var numbers= JSON.parse(localStorage.getItem('numbers'));
                 numbers.push(randomNumber);
                 localStorage.setItem('numbers',JSON.stringify(numbers));
             }
 
             var result = JSON.parse(localStorage.getItem('numbers'));
-            if(result.length>=2)
-            {
+            if(result.length>=2){
                 let max = result[0];
                 for(var i = 0;i<result.length;i++)
                 {
